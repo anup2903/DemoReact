@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
+
 @tailwind utilities;
+.log{
+    background: linear-gradient(to right, rgba(31, 32, 35, 0.5), rgba(56, 53, 53, 0.895)),
+   url('./images/walk.jpg');
+    background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  scroll-behavior: smooth !important;
+  background-attachment: fixed;
+  height:100vh;
+}
+.button{
+    background-color: rgb(77, 205, 162);
+}
+input::placeholder {
+    color: rgb(35, 42, 39);
+    opacity: 1;
+  }
