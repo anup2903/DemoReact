@@ -1,6 +1,12 @@
-import React from 'react'
+import React ,{useState} from 'react'
 import Nav from './Nav'
+import Login from './Login'
+
 const About = () => {
+  const [token, setToken] = useState()
+    if(!token){
+        {return <Login setToken={setToken}/>}
+    }
   return (
     <div>
       <Nav />
