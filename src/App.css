@@ -12,10 +12,62 @@
   background-attachment: fixed;
   height:100vh;
 }
-.button{
+.log2{
+  background-image: url(./images/work.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  scroll-behavior: smooth !important;
+  background-attachment: fixed;
+  height:100vh;
+}
+.log1but{
     background-color: rgb(77, 205, 162);
+}
+.log2but{
+  background-color: rgb(88, 134, 250);
+  z-index: 2;
+}
+.log3but{
+  background-color: rgb(144, 185, 243);
 }
 input::placeholder {
     color: rgb(35, 42, 39);
     opacity: 1;
-  }
+}
+.text1{
+  transform: translateY(-11px);
+}
+.googimg{
+  width: 1.5rem;
+}
+
+.trav{
+  background-image: url(./images/back4.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  scroll-behavior: smooth !important;
+  background-attachment: fixed;
+  height:80vh;
+}
+.infor{
+  transform: translateY(-10rem);
+}
+.divback{
+  transform: translate(9rem,-24rem);
+  z-index: inherit;
+}
+.map{
+  height: auto;
+  width: 90%;
+  background-image: url(./images/map.jpg);
+  /* background-color: aqua; */
+  background-size: cover;
+   background-repeat: no-repeat; 
+  background-position: center;
+  
+}
+.wantravel{
+  color: rgb(77, 205, 162);
+}
