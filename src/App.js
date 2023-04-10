@@ -8,6 +8,7 @@ import Login2 from './components/Login2';
 import NoteState from './context/notes/NoteState';
 import Successlogin from './components/Successlogin';
 import Webpage from './components/Webpage';
+import New from './components/New'
 function App() {
   const [token, setToken] = useState([]);
 
@@ -23,16 +24,17 @@ function App() {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="login" element={<Login setToken={setToken} />} />
-            <Route path="login2" element={<Login2 />} />
-            <Route path="webpage" element={<Webpage/>} />
             <Route
               path="success"
               element={
-                <PrivateRoute>
+                <PrivateRoute >
                   <Successlogin />
                 </PrivateRoute>
               }
             />
+            <Route path="login2" element={<Login2 />} />
+            <Route path="webpage" element={<Webpage/>} />
+            <Route path="login3" element={<New setToken={setToken} />} />
           </Route>
         </Routes>
       </Router>

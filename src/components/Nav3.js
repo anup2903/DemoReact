@@ -17,15 +17,15 @@ setTap(!tap);
 
         <div className="items flex space-x-11 pr-10 pt-1">
           <Link to="/">
-            <li className="text-xl cursor-pointer">Home</li>
+            <li className="text-xl cursor-pointer font-serif">Home</li>
           </Link>
 
           <Link to="/about">
-            <li className="text-xl cursor-pointer">About</li>
+            <li className="text-xl cursor-pointer font-serif">About</li>
           </Link>
 
           <Link to="/login2">
-            <li className="text-xl cursor-pointer">Login</li>
+            <li className="text-xl cursor-pointer font-serif">Login</li>
           </Link>
         </div>
         <div className="burger">
@@ -33,7 +33,7 @@ setTap(!tap);
         </div>
       </ul>
       {tap && (
-        <div className='bg-green-500 media'>
+        <div className='na3 media'>
           <Link to="/">
             <li className="text-xl cursor-pointer flex justify-center list-none bor">Home</li>
           </Link>

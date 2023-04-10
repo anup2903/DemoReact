@@ -2,31 +2,34 @@ import React, { useState } from 'react'
 import Nav2 from './Nav2';
 import axios from 'axios';
 import { useNavigate  } from 'react-router-dom';
+async function LoginUser(credentials) {
+  let res = await axios.post("http://localhost:8080/login", {
+    credentials,
+  })
+     return res = await res.data.token;
+}
 const Login2 = () => {
-const [mail , setMail]=useState('')
-const [pass , setPass]=useState('')
-const handleMail=(e)=>{
-  setMail(e.target.value)
-}
-const handlePass=(e)=>{
-  setPass(e.target.value)
-}
+  const [userName, setUserName] = useState()
+  const [password, setPassword] = useState()
+// const [mail , setMail]=useState('')
+// const [pass , setPass]=useState('')
+// const handleMail=(e)=>{
+//   setMail(e.target.value)
+// }
+// const handlePass=(e)=>{
+//   setPass(e.target.value)
+// }
 const history = useNavigate();
-const handleSubmit =(e)=>{
-  e.preventDefault();
-  axios.post('http://localhost:8080/login',{
-    email: mail,
-    password : pass
+const handleSubmit = async (e) => {
+  e.preventDefault()
+  const token = await LoginUser({
+      userName,
+      password
   })
-  .then((result)=>{
-    const token = result.data.token;
-    localStorage.setItem('authToken', token);
-    history("./success")
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-
+  
+  localStorage.setItem('authToken', token);
+  alert("Successful Login through AXIOS")
+//   setToken(token)
 }
 
   return (
@@ -37,12 +40,12 @@ const handleSubmit =(e)=>{
           <h1 className="text-2xl flex justify-center pt-5 font-semibold text-blue-600">
             Member Login
           </h1>
-          <form  className="flex flex-col justify-end mt-10 ">
+          <form onSubmit={handleSubmit} className="flex flex-col justify-end mt-10 ">
             <div className="flex justify-center">
               <input
                 type="email"
-                value={mail}
-                onChange={handleMail}
+                
+                onChange={(e)=>setUserName(e.target.value)}
                 className="w-60 rounded-xl p-2   bg-slate-400"
                 placeholder="Email"
               />
@@ -50,15 +53,15 @@ const handleSubmit =(e)=>{
             <div className="flex justify-center">
               <input
                 type="password"
-                value={pass}
-                onChange={handlePass}
+                
+                onChange={(e)=>setPassword(e.target.value)}
                 className="mt-5 w-60 rounded-xl p-2 flex justify-center bg-slate-400"
                 placeholder="Password"
               />
             </div>
             <div className="flex justify-center">
               <button
-              onClick={handleSubmit}
+              
                 type="submit"
                 className=" log2but mt-5 rounded-xl button w-60 flex justify-center p-2 "
               >

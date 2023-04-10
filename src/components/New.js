@@ -1,16 +1,12 @@
 import React, { useState } from 'react'
 import Nav from './Nav'
 import PropTypes from 'prop-types'
-
+import axios from 'axios'
 async function LoginUser(credentials) {
-  let data = await fetch("http://localhost:8080/login", {
-    method: "POST",
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-    body: JSON.stringify(credentials),
-  });
-     return data = await data.json();
+  let res = await axios.post("http://localhost:8080/login", {
+    credentials,
+  })
+     return res = await res.data.token;
 }
 
 
@@ -25,14 +21,16 @@ const Login = ({setToken}) => {
           userName,
           password
       })
-      setToken(token)
+      console.log("Success")
+      localStorage.setItem('authToken', token);
+    //   setToken(token)
   }
   return (
     <div className='log '>
       <Nav />
 
       <div className="mt-32 ml-20 ">
-        <h1 className="mt-4 font-pixels text-4xl text-zinc-50">Create a new account</h1>
+        <h1 className="mt-4 font-bold text-4xl text-zinc-50">Create a new account</h1>
         <h3 className="mt-4 text-zinc-400 font-serif">Already a member? Log In</h3>
         <div className="mt-2">
           <form onSubmit={handleSubmit} className='flex flex-col '>

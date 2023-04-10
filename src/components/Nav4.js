@@ -1,8 +1,9 @@
 import React ,{useState} from 'react'
 import {Link} from "react-router-dom"
 import green from '../images/green.png'
-import user from "../images/greenuser.png"
+// import user from "../images/greenuser.png"
 import vortex from '../images/vortex.png'
+import user from '../images/purpuser.png'
 const Nav4 = () => {
     const [tap ,setTap ] = useState(false)
 const click =()=>{
@@ -34,7 +35,7 @@ const click =()=>{
         </div>
       </ul>
       {tap && (
-        <div className='bg-green-500 media'>
+        <div className='na4 media'>
           <Link to="/">
             <li className="text-xl cursor-pointer flex justify-center list-none bor">Home</li>
           </Link>

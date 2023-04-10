@@ -1,6 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100;0,400;0,900;1,800&family=Libre+Baskerville&family=Raleway:ital,wght@0,300;0,900;1,500&family=Rubik+Pixels&display=swap');
+
+
 @tailwind base;
 @tailwind components;
-
 @tailwind utilities;
 .log{
     background: linear-gradient(to right, rgba(31, 32, 35, 0.5), rgba(56, 53, 53, 0.895)),
@@ -133,4 +136,10 @@ input::placeholder {
   scroll-behavior: smooth !important;
   background-attachment: fixed;
   height:100vh;
+  }
+  .na3{
+    background-color: rgb(53, 154, 120);
+  }
+  .na4{
+    background-color: rgb(142, 53, 154);
   }

@@ -35,7 +35,7 @@ const Nav = () => {
         </div>
       </ul>
       {tap && (
-        <div className="bg-blue-400 media">
+        <div className="na3 media">
           <Link to="/">
             <li className="text-xl cursor-pointer flex justify-center list-none bor">
               Home
