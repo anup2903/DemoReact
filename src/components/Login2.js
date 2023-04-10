@@ -1,7 +1,34 @@
-import React from 'react'
-import Nav from './Nav'
+import React, { useState } from 'react'
 import Nav2 from './Nav2';
+import axios from 'axios';
+import { useNavigate  } from 'react-router-dom';
 const Login2 = () => {
+const [mail , setMail]=useState('')
+const [pass , setPass]=useState('')
+const handleMail=(e)=>{
+  setMail(e.target.value)
+}
+const handlePass=(e)=>{
+  setPass(e.target.value)
+}
+const history = useNavigate();
+const handleSubmit =(e)=>{
+  e.preventDefault();
+  axios.post('http://localhost:8080/login',{
+    email: mail,
+    password : pass
+  })
+  .then((result)=>{
+    const token = result.data.token;
+    localStorage.setItem('authToken', token);
+    history("./success")
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+}
+
   return (
     <div className="log2">
       <Nav2 />
@@ -10,10 +37,12 @@ const Login2 = () => {
           <h1 className="text-2xl flex justify-center pt-5 font-semibold text-blue-600">
             Member Login
           </h1>
-          <form className="flex flex-col justify-end mt-10 ">
+          <form  className="flex flex-col justify-end mt-10 ">
             <div className="flex justify-center">
               <input
                 type="email"
+                value={mail}
+                onChange={handleMail}
                 className="w-60 rounded-xl p-2   bg-slate-400"
                 placeholder="Email"
               />
@@ -21,12 +50,15 @@ const Login2 = () => {
             <div className="flex justify-center">
               <input
                 type="password"
+                value={pass}
+                onChange={handlePass}
                 className="mt-5 w-60 rounded-xl p-2 flex justify-center bg-slate-400"
                 placeholder="Password"
               />
             </div>
             <div className="flex justify-center">
               <button
+              onClick={handleSubmit}
                 type="submit"
                 className=" log2but mt-5 rounded-xl button w-60 flex justify-center p-2 "
               >

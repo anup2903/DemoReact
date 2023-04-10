@@ -43,7 +43,8 @@ input::placeholder {
 }
 
 .trav{
-  background-image: url(./images/back4.jpg);
+  background: linear-gradient(to right, rgba(28, 29, 30, 0.5), rgba(56, 53, 53, 0.895)),
+   url('./images/travel.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -71,3 +72,65 @@ input::placeholder {
 .wantravel{
   color: rgb(77, 205, 162);
 }
+.about{
+  background: linear-gradient(to right, rgba(28, 29, 30, 0.5), rgba(56, 53, 53, 0.895)),
+   url('./images/groupWork.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  scroll-behavior: smooth !important;
+  background-attachment: fixed;
+  height:100vh;
+}
+.home{
+  background-image: url(./images/land.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  scroll-behavior: smooth !important;
+  background-attachment: fixed;
+  height:100vh;
+}
+.burger{
+  display: none;
+}
+
+  @media screen and (max-width:500px) {
+    .items{
+      display:none;
+    }
+    .burger{
+      display: block;
+    }
+    .home2{
+      display: flex;
+      justify-content: center;
+    }
+    .editors{
+      display: flex;
+      flex-direction: column;
+    }
+    textarea{
+      width: 24rem;
+    }
+  }
+  @media screen and (min-width:500px){
+      .media{
+        display :none;
+      }
+  }
+  .homtext{
+    /* color: rgb(52, 152, 119); */
+  }
+  .hombut{
+    background-color: rgb(77, 205, 162);
+  }
+  .Web{
+    background-image: url(./images/webback.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  scroll-behavior: smooth !important;
+  background-attachment: fixed;
+  height:100vh;
+  }

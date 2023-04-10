@@ -3,13 +3,14 @@ import Nav from './Nav'
 import PropTypes from 'prop-types'
 
 async function LoginUser(credentials) {
-  return fetch('https://localhost:8080/login',{
-        method: 'POST',
-        header: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(credentials)
-    }).then(data => data.json())
+  let data = await fetch("http://localhost:8080/login", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+    body: JSON.stringify(credentials),
+  });
+     return data = await data.json();
 }
 
 
@@ -52,6 +53,14 @@ const Login = ({setToken}) => {
             />
             <button type="submit"  className='log1but mt-4 rounded-xl button w-60 justify-center p-2'>Create Account</button>
           </form>
+          <div className='flex mt-7 '>
+            <hr className='w-[6.2rem] border-zinc-500'/>
+            <h1 className='text1 text-center px-2 text-gray-100'>OR</h1>
+            <hr className='w-[6.2rem] border-zinc-500'/>
+          </div>
+          <div className='flex '>
+            <button className='rounded-xl bg-zinc-300 w-60 flex justify-center p-2'><img className='googimg flex pr-1 pt-1 justify-center' src="https://img.icons8.com/fluency/48/null/google-logo.png"/> Login with google</button>
+          </div>
         </div>
 
         {/* <div className='flex align-middle'>
