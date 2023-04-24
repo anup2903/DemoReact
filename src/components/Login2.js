@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Nav2 from './Nav2';
 import axios from 'axios';
-import { useNavigate  } from 'react-router-dom';
 async function LoginUser(credentials) {
   let res = await axios.post("http://localhost:8080/login", {
     credentials,
@@ -11,15 +10,8 @@ async function LoginUser(credentials) {
 const Login2 = () => {
   const [userName, setUserName] = useState()
   const [password, setPassword] = useState()
-// const [mail , setMail]=useState('')
-// const [pass , setPass]=useState('')
-// const handleMail=(e)=>{
-//   setMail(e.target.value)
-// }
-// const handlePass=(e)=>{
-//   setPass(e.target.value)
-// }
-const history = useNavigate();
+
+
 const handleSubmit = async (e) => {
   e.preventDefault()
   const token = await LoginUser({
